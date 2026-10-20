@@ -2,17 +2,18 @@
 class Bashou < Formula
   desc "Pet in your terminal that grows as you learn bash (psst: bashou pony hay)"
   homepage "https://github.com/IAmAStealer/Bashou"
-  url "https://github.com/IAmAStealer/Bashou/releases/download/v0.10.2/bashou-0.10.2.tar.gz"
-  sha256 "353f9a02b3f617cabd557a63485c54453de7079f769834e644d2053e0954a59a"
+  url "https://github.com/IAmAStealer/Bashou/releases/download/v0.10.3/bashou-0.10.3.tar.gz"
+  sha256 "36074a8f2fb97ee75842841d839b00591f916eed192d8be2def571fe347322d9"
   license "MIT"
 
-  uses_from_macos "python"
+  depends_on "python@3.15"
 
   def install
     libexec.install Dir["*"]
+    libexec.install_symlink Formula["python@3.15"].opt_bin/"python3.15" => "python"
     (bin/"bashou").write <<~SH
       #!/bin/sh
-      exec python3 "#{opt_libexec}/launch.py" bashou "$@"
+      exec "#{opt_libexec}/python" "#{opt_libexec}/launch.py" bashou "$@"
     SH
   end
 
