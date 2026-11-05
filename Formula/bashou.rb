@@ -2,8 +2,8 @@
 class Bashou < Formula
   desc "Pet in your terminal that grows as you learn bash (psst: bashou pony hay)"
   homepage "https://github.com/IAmAStealer/Bashou"
-  url "https://github.com/IAmAStealer/Bashou/releases/download/v0.12.1/bashou-0.12.1.tar.gz"
-  sha256 "b1dd78aeb43723d5a2cc3b53864a6e32839304825ead12f771b072e3af461603"
+  url "https://github.com/IAmAStealer/Bashou/releases/download/v0.12.2/bashou-0.12.2.tar.gz"
+  sha256 "914d3cf8d55de4a45535fad1faace99c66ca15a639c5006ae02af6bad504f889"
   license "MIT"
 
   depends_on "python@3.15"
